@@ -1,0 +1,31 @@
+---
+title: "uso_del_paquete_dama"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{uso_del_paquete_dama}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Dama)
+```
+
+Este paquete permite descargar, resumir y graficar datos de estaciones meteorológicas.
+
+**Ejemplo de uso**
+
+```{r}
+ids <- c("NH0437", "NH0472")
+rutas <- paste0("datos/estacion_", ids, ".csv")
+
+tabla_resumen_temperatura(estaciones)
+grafico_temperatura_mensual(estaciones)
+```
