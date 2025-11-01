@@ -2,8 +2,10 @@ Package: Dama
 Title: Paquete de Prueba para Desarrollar Paquetes
 Version: 0.0.0.9000
 Authors@R: 
-    person("Emma", "Schlieper", , "schlieper.emma@gmail.com", role = c("aut", "cre"),
-    person("Juan David", "Bongiovanni", , "bongiovannijuandavid@gmail.com", role = c("aut", "cre"))
+     c(
+      person(given = "Emma", family = "Schlieper", email = "schlieper.emma@gmail.com", role = c("aut", "cre")),
+      person(given = "Juan David", family = "Bongiovanni", email = "bongiovannijuandavid@gmail.com", role = "aut")
+    )
 Description: Dama no está pensado para ser usado o instalado,
   su objetuvo es aprender a desarrollar paquetes de R.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
@@ -13,3 +15,12 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 URL: https://github.com/emma11284/Dama
 BugReports: https://github.com/emma11284/Dama/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    dplyr,
+    ggplot2,
+    lubridate,
+    readr
