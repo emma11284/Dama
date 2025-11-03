@@ -4,7 +4,7 @@
 \alias{tabla_resumen_temperatura}
 \title{tabla resumen de temperatura}
 \usage{
-tabla_resumen_temperatura(estacion)
+tabla_resumen_temperatura(estaciones)
 }
 \arguments{
 \item{estaciones}{dataframe con las columnas "id" y "temperatura_abrigo_150cm"}
@@ -16,7 +16,11 @@ un tibble con promedio y desvío estándar por estación
 devuelve una tabla de resumen de temperatura_abrigo_150cm para una o más estaciones.
 }
 \examples{
-df <- leer_estacion("NH0437", "datos/NH0437.csv")
-  tabla_resumen_temperatura(df)
+estaciones <- tibble::tibble(
+  id  = c("A","A","B","B"),
+  fecha = as.Date(c("2020-01-01","2020-02-01","2020-01-01","2020-02-01")),
+  temperatura_abrigo_150cm = c(10, 12, 15, 11)
+)
+tabla_resumen_temperatura(estaciones)
 
 }

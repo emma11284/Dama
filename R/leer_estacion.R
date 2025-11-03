@@ -7,8 +7,7 @@
 #'
 #' @returns un dataframe con los datos de la estación
 #' @examples
-#'leer_estacion("NH0437", "datos/NH0437.csv")
-#'   head(df)
+#' leer_estacion("NH0437", tempfile(fileext = ".csv"))
 #'
 #' @export
 leer_estacion <- function(id_estacion, ruta) {

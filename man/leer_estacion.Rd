@@ -18,7 +18,6 @@ un dataframe con los datos de la estación
 descarga y lee los datos de estaciones
 }
 \examples{
-leer_estacion("NH0437", "datos/NH0437.csv")
-  head(df)
+leer_estacion("NH0437", tempfile(fileext = ".csv"))
 
 }

@@ -6,12 +6,17 @@
 #'
 #' @returns un tibble con promedio y desvío estándar por estación
 #' @examples
-#' df <- leer_estacion("NH0437", "datos/NH0437.csv")
-#'   tabla_resumen_temperatura(df)
+#' estaciones <- tibble::tibble(
+#'   id  = c("A","A","B","B"),
+#'   fecha = as.Date(c("2020-01-01","2020-02-01","2020-01-01","2020-02-01")),
+#'   temperatura_abrigo_150cm = c(10, 12, 15, 11)
+#' )
+#' tabla_resumen_temperatura(estaciones)
 #'
 #' @export
-tabla_resumen_temperatura <- function(estacion) {
-  resumen <- estacion |>
+tabla_resumen_temperatura <- function(estaciones) {
+
+  resumen <- estaciones |>
     dplyr::group_by(id) |>
     dplyr::summarise(
       promedio_abrigo = mean(.data$temperatura_abrigo_150cm, na.rm = TRUE),
