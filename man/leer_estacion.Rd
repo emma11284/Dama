@@ -18,7 +18,7 @@ un dataframe con los datos de la estación
 descarga y lee los datos de estaciones
 }
 \examples{
-df <- leer_estacion("NH0437", "datos/NH0437.csv")
+leer_estacion("NH0437", "datos/NH0437.csv")
   head(df)
 
 }

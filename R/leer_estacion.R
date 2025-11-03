@@ -7,7 +7,7 @@
 #'
 #' @returns un dataframe con los datos de la estación
 #' @examples
-#' df <- leer_estacion("NH0437", "datos/NH0437.csv")
+#'leer_estacion("NH0437", "datos/NH0437.csv")
 #'   head(df)
 #'
 #' @export
