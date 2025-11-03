@@ -1,30 +1,33 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # Dama
 
 <!-- badges: start -->
 
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
 <!-- badges: end -->
 
-The goal of Dama is to
-
 ## Instalación
 
-Puedes instalar la versión de desarrolo de Dama desde [GitHub](https://github.com/) con:
+Puedes instalar la versión de desarrolo de Dama desde
+[GitHub](https://github.com/) con:
 
 ``` r
-# install.packages("pak")
-pak::pak("emma11284/Dama")
+# install.packages("pak") 
+pak::pak("emma11284/Dama") 
 ```
 
 ## Funciones principales
 
 ### 1. `leer_estacion()`
 
-Esta función se encarga de **descargar y leer los datos de una o varias estaciones meteorológicas**.\
-Permite importar los registros de temperatura desde una fuente de datos, preparándolos para ser analizados o visualizados.\
+Esta función se encarga de **descargar y leer los datos de una o varias
+estaciones meteorológicas**.  
+Permite importar los registros de temperatura desde una fuente de datos,
+preparándolos para ser analizados o visualizados.  
 Constituye el primer paso del flujo de trabajo dentro del paquete.
 
 **Ejemplo:**
@@ -33,11 +36,30 @@ Constituye el primer paso del flujo de trabajo dentro del paquete.
 leer_estacion("NH0437", "datos/NH0437.csv")
 ```
 
-### 2. `grafico_temp_mensual()`
+### 2. `resumen_temp()`
 
-Esta función **genera un gráfico de la temperatura mensual promedio** de una estación determinada.\
-A partir de los datos leídos con `leer_estacion()`, construye una visualización que muestra la evolución de la temperatura a lo largo de los meses.\
-Es especialmente útil para observar patrones, variaciones o tendencias en el comportamiento térmico de una estación específica.
+La función `resumen_temp()` produce una **tabla de resumen estadístico**
+de la variable `temperatura_abrigo_150cm` para una o más estaciones.  
+Incluye medidas como el promedio, el valor mínimo y el máximo
+registrados, entre otras.  
+Su finalidad es ofrecer una visión general y comparativa de los datos de
+temperatura obtenidos, facilitando el análisis descriptivo.
+
+**Ejemplo:**
+
+``` r
+df <- leer_estacion("NH0437", "datos/NH0437.csv")     tabla_resumen_temperatura(df)
+```
+
+### 3. `grafico_temp_mensual()`
+
+Esta función **genera un gráfico de la temperatura mensual promedio** de
+una estación determinada.  
+A partir de los datos leídos con `leer_estacion()`, construye una
+visualización que muestra la evolución de la temperatura a lo largo de
+los meses.  
+Es especialmente útil para observar patrones, variaciones o tendencias
+en el comportamiento térmico de una estación específica.
 
 **Ejemplo:**
 
@@ -45,15 +67,4 @@ Es especialmente útil para observar patrones, variaciones o tendencias en el co
 grafico_temperatura_mensual(estaciones, colores = c("tomato", "dodgerblue"), titulo = "Temperatura mensual promedio")
 ```
 
-### 3. `resumen_temp()`
-
-La función `resumen_temp()` produce una **tabla de resumen estadístico** de la variable `temperatura_abrigo_150cm` para una o más estaciones.\
-Incluye medidas como el promedio, el valor mínimo y el máximo registrados, entre otras.\
-Su finalidad es ofrecer una visión general y comparativa de los datos de temperatura obtenidos, facilitando el análisis descriptivo.
-
-**Ejemplo:**
-
-``` r
-df <- leer_estacion("NH0437", "datos/NH0437.csv")
-    tabla_resumen_temperatura(df)
-```
+### 
