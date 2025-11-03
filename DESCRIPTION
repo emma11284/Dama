@@ -8,8 +8,7 @@ Authors@R:
     )
 Description: Dama no está pensado para ser usado o instalado,
   su objetuvo es aprender a desarrollar paquetes de R.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
@@ -18,7 +17,8 @@ BugReports: https://github.com/emma11284/Dama/issues
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    tibble
 VignetteBuilder: knitr
 Imports: 
     dplyr,
