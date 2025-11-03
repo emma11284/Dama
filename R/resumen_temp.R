@@ -10,13 +10,12 @@
 #'   tabla_resumen_temperatura(df)
 #'
 #' @export
-tabla_resumen_temperatura <- function(estaciones) {
-  resumen <- estaciones  |>
-    group_by(id)  |>
-    summarise(
-      promedio_abrigo = mean(temperatura_abrigo_150cm, na.rm = TRUE),
-      desvio          = sd(temperatura_abrigo_150cm, na.rm = TRUE),
+tabla_resumen_temperatura <- function(estacion) {
+  resumen <- estacion |>
+    dplyr::group_by(id) |>
+    dplyr::summarise(
+      promedio_abrigo = mean(.data$temperatura_abrigo_150cm, na.rm = TRUE),
+      desvio          = sd(temperatura_abrigo_150cm, na.rm = TRUE)
     )
-
   return(resumen)
 }

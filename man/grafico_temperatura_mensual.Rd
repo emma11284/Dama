@@ -4,18 +4,14 @@
 \alias{grafico_temperatura_mensual}
 \title{gráfico de la temperatura mensual}
 \usage{
-grafico_temperatura_mensual(
-  estaciones,
-  colores = "steelblue",
-  titulo = "Temperatura"
-)
+grafico_temperatura_mensual(estacion, colores = NULL, titulo = "Temperatura")
 }
 \arguments{
-\item{estaciones}{dataframe con columnas "fecha", "temperatura_abrigo_150cm" y "id"}
-
 \item{colores}{vector de colores para las series (opcional)}
 
 \item{titulo}{título del gráfico. Por defecto "Temperatura"}
+
+\item{estaciones}{dataframe con columnas "fecha", "temperatura_abrigo_150cm" y "id"}
 }
 \value{
 un objeto ggplot

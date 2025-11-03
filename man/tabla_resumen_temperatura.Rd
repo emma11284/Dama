@@ -4,7 +4,7 @@
 \alias{tabla_resumen_temperatura}
 \title{tabla resumen de temperatura}
 \usage{
-tabla_resumen_temperatura(estaciones)
+tabla_resumen_temperatura(estacion)
 }
 \arguments{
 \item{estaciones}{dataframe con las columnas "id" y "temperatura_abrigo_150cm"}

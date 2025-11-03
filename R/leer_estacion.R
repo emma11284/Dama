@@ -17,7 +17,7 @@ leer_estacion <- function(id_estacion, ruta) {
 
   if (!file.exists(ruta)) {
     url <- paste0(
-      "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/estaciones/",
+      "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/",
       id_estacion, ".csv"
     )
     utils::download.file(url, ruta, mode = "wb")
