@@ -20,7 +20,6 @@ grafico_temperatura_mensual <- function(estacion, colores = NULL, titulo = "Temp
     dplyr::summarise(temperatura_promedio = mean(.data$temperatura_abrigo_150cm, na.rm = TRUE)) |>
 
     ggplot2::ggplot(ggplot2::aes(x = mes, y = temperatura_promedio, color = id)) +
-    ggplot2::geom_line(size = 1.2) +
     ggplot2::scale_color_manual(values = colores) +
     ggplot2::labs(
       title = titulo,
