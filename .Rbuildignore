@@ -6,3 +6,5 @@
 ^pkgdown$
 ^LICENSE\.md$
 ^datos$
+^\.github$
+^CODE_OF_CONDUCT\.md$
