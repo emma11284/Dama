@@ -21,38 +21,51 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-The goal of Dama is to ...
+## Instalación
 
-## Installation
-
-You can install the development version of Dama from [GitHub](https://github.com/) with:
+Puedes instalar la versión de desarrolo de Dama desde [GitHub](https://github.com/) con:
 
 ``` r
-# install.packages("pak")
-pak::pak("emma11284/Dama")
+# install.packages("pak") 
+pak::pak("emma11284/Dama") 
 ```
 
-## Example
+## Funciones principales
 
-This is a basic example which shows you how to solve a common problem:
+### 1. `leer_estacion()`
 
-```{r example}
-library(Dama)
-## basic example code
+Esta función se encarga de **descargar y leer los datos de una o varias estaciones meteorológicas**.\
+Permite importar los registros de temperatura desde una fuente de datos, preparándolos para ser analizados o visualizados.\
+Constituye el primer paso del flujo de trabajo dentro del paquete.
+
+**Ejemplo:**
+
+``` r
+leer_estacion("NH0437", "datos/NH0437.csv")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+### 2. `resumen_temp()`
 
-```{r cars}
-summary(cars)
+La función `resumen_temp()` produce una **tabla de resumen estadístico** de la variable `temperatura_abrigo_150cm` para una o más estaciones.\
+Incluye medidas como el promedio, el valor mínimo y el máximo registrados, entre otras.\
+Su finalidad es ofrecer una visión general y comparativa de los datos de temperatura obtenidos, facilitando el análisis descriptivo.
+
+**Ejemplo:**
+
+``` r
+df <- leer_estacion("NH0437", "datos/NH0437.csv")     tabla_resumen_temperatura(df)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+### 3. `grafico_temp_mensual()`
 
-You can also embed plots, for example:
+Esta función **genera un gráfico de la temperatura mensual promedio** de una estación determinada.\
+A partir de los datos leídos con `leer_estacion()`, construye una visualización que muestra la evolución de la temperatura a lo largo de los meses.\
+Es especialmente útil para observar patrones, variaciones o tendencias en el comportamiento térmico de una estación específica.
 
-```{r pressure, echo = FALSE}
-plot(pressure)
+**Ejemplo:**
+
+``` r
+grafico_temperatura_mensual(estaciones, colores = c("tomato", "dodgerblue"), titulo = "Temperatura mensual promedio")
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+### 
